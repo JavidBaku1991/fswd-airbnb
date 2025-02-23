@@ -50,7 +50,8 @@ gem 'bootsnap', '>= 1.13', require: false
 gem 'stripe'
 
 # Gemfile
-gem 'dotenv-rails', groups: %i[development test]
+
+gem 'dotenv-rails', groups: [:development, :test]
 
 gem 'figaro'
 

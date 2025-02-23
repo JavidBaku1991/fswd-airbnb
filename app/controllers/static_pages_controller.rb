@@ -26,6 +26,6 @@ class StaticPagesController < ApplicationController
   end
 
   def booking_success
-    render 'booking_success'  # this should match the name of your BookingSuccess view file
+    render 'booking_success'  
   end
 end

@@ -1,7 +1,7 @@
-const { environment } = require('@rails/webpacker')
+const { environment } = require('@rails/webpacker');
+const webpack = require('webpack'); // Ensure this is at the top
 
-
-const path = require('path')
+const path = require('path');
 
 const customConfig = {
   resolve: {
@@ -10,22 +10,26 @@ const customConfig = {
       '@utils': path.resolve(__dirname, '..', '..', 'app/javascript/src/utils'),
     }
   }
-}
+};
 
 environment.plugins.append('Provide', new webpack.ProvidePlugin({
   Rails: '@rails/ujs'
-}))
+}));
+
+environment.plugins.append('Provide', new webpack.ProvidePlugin({
+  $: 'jquery',
+  jQuery: 'jquery',
+  Popper: ['popper.js', 'default']
+}));
 
 environment.config.merge({
   entry: {
     application: './app/javascript/packs/application.js',
     home: './app/javascript/packs/home.js'
   }
-})
+});
 
 // Add this to choose which .env variables to expose to the frontend
-const webpack = require('webpack')
-
 environment.plugins.prepend(
   "Environment",
   new webpack.EnvironmentPlugin(
@@ -40,6 +44,6 @@ environment.plugins.prepend(
 
 environment.config.merge(customConfig);
 
-environment.splitChunks()
+environment.splitChunks();
 
-module.exports = environment
+module.exports = environment;
