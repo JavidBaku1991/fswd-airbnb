@@ -108,7 +108,7 @@ class MyBookings extends React.Component {
             ))}
           </div>
           <div className="property-bookings">
-            <h1>My Property Bookings</h1>
+            <h1>My Property Bookings in Airbnb</h1>
             {propertyBookings.map(booking => (
               <div key={booking.id}>
                 <p>Property: {booking.property.title}</p>
