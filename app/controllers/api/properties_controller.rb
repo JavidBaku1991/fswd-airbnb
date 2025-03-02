@@ -87,3 +87,6 @@ module Api
     end
   end
 end
+
+user = User.find_by(email: 'javidbaku1991@gmail.com')
+properties = user.properties
