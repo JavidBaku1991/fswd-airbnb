@@ -35,4 +35,7 @@ Rails.application.routes.draw do
     # stripe webhook
     post '/charges/mark_complete' => 'charges#mark_complete'
   end
+
+  # Catch-all route for React Router
+  get '*path', to: 'static_pages#home', constraints: ->(req) { !req.xhr? && req.format.html? }
 end

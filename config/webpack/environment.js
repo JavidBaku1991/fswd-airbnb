@@ -12,9 +12,9 @@ const customConfig = {
   }
 };
 
-environment.plugins.append('Provide', new webpack.ProvidePlugin({
-  Rails: '@rails/ujs'
-}));
+// environment.plugins.append('Provide', new webpack.ProvidePlugin({
+//   Rails: '@rails/ujs'
+// }));
 
 environment.plugins.append('Provide', new webpack.ProvidePlugin({
   $: 'jquery',
